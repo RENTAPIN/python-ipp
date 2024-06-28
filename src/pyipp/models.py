@@ -1,4 +1,5 @@
 """Models for IPP."""
+
 # pylint: disable=R0912,R0915
 from __future__ import annotations
 

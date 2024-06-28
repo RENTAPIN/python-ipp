@@ -1,4 +1,5 @@
 """Tests for IPP Models."""
+
 # pylint: disable=R0912,R0915
 from __future__ import annotations
 
@@ -193,6 +194,7 @@ async def test_printer() -> None:  # noqa: PLR0915
     assert printer.uris[1].authentication is None
     assert printer.uris[1].security is None
 
+
 def test_printer_as_dict() -> None:
     """Test the dictionary version of Printer."""
     parsed = parser.parse(load_fixture_binary("get-printer-attributes-epsonxp6000.bin"))
@@ -209,6 +211,7 @@ def test_printer_as_dict() -> None:
     assert len(printer_dict["markers"]) == 5
     assert isinstance(printer_dict["uris"], List)
     assert len(printer_dict["uris"]) == 2
+
 
 @pytest.mark.asyncio
 async def test_printer_with_single_marker() -> None:

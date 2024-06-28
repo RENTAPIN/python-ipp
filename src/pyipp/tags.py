@@ -1,4 +1,5 @@
 """Attribute Tags for IPP."""
+
 from .enums import IppTag
 
 ATTRIBUTE_TAG_MAP = {
