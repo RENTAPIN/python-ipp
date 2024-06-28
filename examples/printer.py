@@ -3,10 +3,16 @@
 import asyncio
 
 from pyipp import IPP
+from settings import printer_url
 
 
 async def main() -> None:
     """Show example of connecting to your IPP print server."""
+    async with IPP(printer_url) as ipp:
+        # Get Printer Info
+        printer = await ipp.printer()
+        print(printer)
+
     async with IPP("ipps://EPSON761251.local:631/ipp/print") as ipp:
         # Get Printer Info
         printer = await ipp.printer()

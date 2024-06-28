@@ -4,11 +4,12 @@ import asyncio
 
 from pyipp import IPP
 from pyipp.enums import IppOperation
+from settings import printer_url
 
 
 async def main() -> None:
     """Show example of executing operation against your IPP print server."""
-    async with IPP("ipps://192.168.1.92:631/ipp/print") as ipp:
+    async with IPP(printer_url) as ipp:
         response = await ipp.execute(
             IppOperation.GET_PRINTER_ATTRIBUTES,
             {
