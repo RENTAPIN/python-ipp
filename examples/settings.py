@@ -1,4 +1,6 @@
 # examples/settings.py
+# pylint: disable=W0621
+"""Configuration settings for Python client for IPP."""
 import os
 
 from dotenv import load_dotenv

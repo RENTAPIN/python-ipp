@@ -1,4 +1,4 @@
-# pylint: disable=W0621
+# pylint: disable=W0621,C0411
 """Asynchronous Python client for IPP."""
 import asyncio
 from pathlib import Path
@@ -27,10 +27,10 @@ async def execute_print_job(content: bytes, document_format: str) -> None:
 
 
 if __name__ == "__main__":
-    document_format = "text/plain"  # "application/pdf" for pdf, etc.
-    file_name = __file__  # just print this file as an example
-    with Path(file_name).open("rb") as f:
+    DOCUMENT_FORMAT = "text/plain"  # const: "application/pdf" for pdf, etc.
+    FILE_NAME = __file__  # const: just print this file as an example
+    with Path(FILE_NAME).open("rb") as f:
         content = f.read()
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(execute_print_job(content, document_format))
+    loop.run_until_complete(execute_print_job(content, DOCUMENT_FORMAT))
