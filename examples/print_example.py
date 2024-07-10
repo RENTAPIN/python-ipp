@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # Configure logging
     logging.basicConfig(
         level=logging.DEBUG,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
 
     DOCUMENT_FORMAT = "text/plain"  # const: "application/pdf" for pdf, etc.

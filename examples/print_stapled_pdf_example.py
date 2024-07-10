@@ -5,7 +5,7 @@ import logging
 from pathlib import Path
 
 from pyipp import IPP
-from pyipp.enums import IppOperation, IppFinishing
+from pyipp.enums import IppFinishing, IppOperation
 from settings import printer_url
 
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     # Configure logging
     logging.basicConfig(
         level=logging.DEBUG,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
 
     DOCUMENT_FORMAT = "application/pdf"
