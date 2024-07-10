@@ -198,13 +198,19 @@ class IPP:
         except (structerror, Exception) as exc:  # disable=broad-except
             raise IPPParseError from exc
 
-        if parsed["status-code"] == IppStatus.ERROR_VERSION_NOT_SUPPORTED:
+        parsed_status_code = parsed["status-code"]
+
+        if parsed_status_code == IppStatus.ERROR_VERSION_NOT_SUPPORTED:
             raise IPPVersionNotSupportedError("IPP version not supported by server")
 
-        if parsed["status-code"] not in range(0x200):
+        if parsed_status_code not in range(0x200):
             raise IPPError(
                 "Unexpected printer status code",
-                {"status-code": parsed["status-code"]},
+                {
+                    "status-code": parsed_status_code,
+                    "status-code-hex": f"0x{parsed_status_code:04X}",
+                    "status_code_name": IppStatus(parsed_status_code).name,
+                },
             )
 
         return parsed
