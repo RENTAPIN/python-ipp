@@ -9,5 +9,8 @@ from dotenv import load_dotenv
 if os.path.exists(".env"):
     load_dotenv(".env")
 
+
 # Set printer_url from the environment
 printer_url = os.getenv("PRINTER_URL")
+
+print(printer_url)
