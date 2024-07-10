@@ -114,3 +114,9 @@ python_boilerplate/
 
 # Node
 node_modules/
+
+# dotenv settings file
+.env
+
+# printer diagnosis binary dumps
+*.bin
