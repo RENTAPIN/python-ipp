@@ -1,6 +1,7 @@
 # pylint: disable=W0621,C0411
 """Asynchronous Python client for IPP."""
 import asyncio
+import logging
 from pathlib import Path
 
 from pyipp import IPP
@@ -27,6 +28,12 @@ async def execute_print_job(content: bytes, document_format: str) -> None:
 
 
 if __name__ == "__main__":
+    # Configure logging
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+
     DOCUMENT_FORMAT = "text/plain"  # const: "application/pdf" for pdf, etc.
     FILE_NAME = __file__  # const: just print this file as an example
     with Path(FILE_NAME).open("rb") as f:
