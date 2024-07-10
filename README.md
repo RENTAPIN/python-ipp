@@ -4,12 +4,57 @@ Asynchronous Python client for Internet Printing Protocol (IPP).
 
 ## About
 
-This package allows you to monitor printers that support the Internet Printing Protocol (IPP) programmatically.
+This package allows you to monitor printers that support the Internet Printing Protocol (IPP)
+programmatically.
 
 ## Installation
 
+This section contains an installation instruction from the global repository, and a second 
+installation instruction from a cloned (forked) local repository.
+
+### Client Repository - Global
+
+Points to the official source. This should be (*) sufficient to use pyipp in your project.
+
 ```bash
 pip install pyipp
+```
+
+(*) should be, but unfortunately wasn't in my case. I had to make a few changes in a local repo.
+
+A root cause was not yet found, but it appears that rebuilding `pyipp` with `poetry` and use a local
+`pip install -e ..\python-ipp` solved the issue.
+
+### PYIPP Repository - Local
+
+Allows custom development - e.g. to fix a workaround to have better logging where jobs are not
+printing.
+
+The following set of well-known instruction for a fresh virtual environment:
+
+```
+python -m venv .venv
+.venv\Scripts\activate
+python.exe -m pip install --upgrade pip
+```
+
+But then, we need to install `poetry`, and use `poetry` to rebuild pyipp.
+
+```
+pip install poetry
+poetry install
+```
+
+### Client Repository - Local
+
+To use this local version of the pyipp package, we need to pip install it, using a local path.
+
+1. first uninstall previous installs if they still exists
+2. install from absolute path - relative path options are possible too!
+
+```
+pip uninstall pyipp
+pip install -e d:\Repos\python-ipp
 ```
 
 ## Usage
