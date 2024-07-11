@@ -9,14 +9,14 @@ programmatically.
 
 ## Installation
 
-This section contains an installation instruction from the global repository, and a second 
+This section contains an installation instruction from the global repository, and a second
 installation instruction from a cloned (forked) local repository.
 
 ### Client Repository - Global
 
 Points to the official source. This should be (*) sufficient to use pyipp in your project.
 
-```bash
+```sh
 pip install pyipp
 ```
 
@@ -32,7 +32,7 @@ printing.
 
 The following set of well-known instruction for a fresh virtual environment:
 
-```
+```sh
 python -m venv .venv
 .venv\Scripts\activate
 python.exe -m pip install --upgrade pip
@@ -40,7 +40,7 @@ python.exe -m pip install --upgrade pip
 
 But then, we need to install `poetry`, and use `poetry` to rebuild pyipp.
 
-```
+```sh
 pip install poetry
 poetry install
 ```
@@ -52,7 +52,7 @@ To use this local version of the pyipp package, we need to pip install it, using
 1. first uninstall previous installs if they still exists
 2. install from absolute path - relative path options are possible too!
 
-```
+```sh
 pip uninstall pyipp
 pip install -e d:\Repos\python-ipp
 ```
