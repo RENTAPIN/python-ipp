@@ -241,3 +241,13 @@ def load_fixture_binary(filename: str) -> bytes:
     )
     with open(path, "rb") as fptr:  # noqa: PTH123
         return fptr.read()
+
+def save_fixture_binary(filename: str, b: bytes) -> None:
+    """Load a binary fixture."""
+    path = os.path.join(  # noqa: PTH118
+        os.path.dirname(__file__),  # noqa: PTH120
+        "fixtures",
+        filename,
+    )
+    with open(path, "wb") as fptr:  # noqa: PTH123
+        fptr.write(b)

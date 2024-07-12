@@ -249,7 +249,7 @@ def parse(  # noqa: PLR0912, PLR0915
 
     data["operation-attributes"] = []
     data["unsupported-attributes"] = []
-    data["jobs"] = []
+    data["job-attributes-tag"] = []
     data["printers"] = []
     data["data"] = b""
 
@@ -273,7 +273,7 @@ def parse(  # noqa: PLR0912, PLR0915
                 data[attribute_key].append(tmp_data)
                 tmp_data = {}
 
-            attribute_key = "jobs"
+            attribute_key = "job-attributes-tag"
             offset += 1
         elif struct.unpack_from("b", raw_data, offset)[0] == IppTag.PRINTER.value:
             if tmp_data and attribute_key:
@@ -320,6 +320,9 @@ def parse(  # noqa: PLR0912, PLR0915
 
     if isinstance(data["operation-attributes"], list):
         data["operation-attributes"] = data["operation-attributes"][0]
+
+    if isinstance(data["job-attributes-tag"], list) and len(data["job-attributes-tag"]) == 1:
+        data["job-attributes-tag"] = data["job-attributes-tag"][0]
 
     if contains_data:
         offset_start = offset + 1

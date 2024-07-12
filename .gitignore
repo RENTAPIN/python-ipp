@@ -114,6 +114,3 @@ python_boilerplate/
 
 # Node
 node_modules/
-
-# printer diagnosis binary dumps
-*.bin

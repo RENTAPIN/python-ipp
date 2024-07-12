@@ -2,9 +2,9 @@
 
 from pyipp import serializer
 from pyipp.const import DEFAULT_CHARSET, DEFAULT_CHARSET_LANGUAGE, DEFAULT_PROTO_VERSION
-from pyipp.enums import IppOperation, IppTag
+from pyipp.enums import IppOperation, IppTag, IppFinishing
 
-from . import load_fixture_binary
+from . import load_fixture_binary, save_fixture_binary
 
 
 def test_construct_attribute_values() -> None:
@@ -74,4 +74,34 @@ def test_encode_dict() -> None:
 
     assert result == load_fixture_binary(
         "serializer/get-printer-attributes-request-000.bin",
+    )
+
+def test_encode_dict_job_attributes_tag() -> None:
+    """Test the encode_dict method."""
+    result = serializer.encode_dict(
+        {
+            "version": DEFAULT_PROTO_VERSION,
+            "operation": IppOperation.GET_PRINTER_ATTRIBUTES,
+            "request-id": 1,
+            "operation-attributes-tag": {
+                "attributes-charset": DEFAULT_CHARSET,
+                "attributes-natural-language": DEFAULT_CHARSET_LANGUAGE,
+                "printer-uri": "ipp://printer.example.com:361/ipp/print",
+                "requesting-user-name": "PythonIPP",
+            },
+            "job-attributes-tag": {
+                "sides": "two-sided-long-edge",
+                "finishings": IppFinishing.STAPLE_TOP_LEFT,
+            }
+        },
+    )
+
+    # New fixtures can be written like this:
+    # save_fixture_binary(
+    #     "serializer/test_encode_dict_job_attributes_tag.bin",
+    #     result
+    # )
+
+    assert result == load_fixture_binary(
+        "serializer/test_encode_dict_job_attributes_tag.bin",
     )

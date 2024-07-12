@@ -2,7 +2,7 @@
 # name: test_parse_brother_mfcj5320dw
   dict({
     'data': b'',
-    'jobs': list([
+    'job-attributes-tag': list([
     ]),
     'operation-attributes': dict({
       'attributes-charset': 'utf-8',
@@ -449,7 +449,7 @@
 # name: test_parse_epson_xp6000
   dict({
     'data': b'',
-    'jobs': list([
+    'job-attributes-tag': list([
     ]),
     'operation-attributes': dict({
       'attributes-charset': 'utf-8',
@@ -942,7 +942,7 @@
 # name: test_parse_kyocera_ecosys_m2540dn
   dict({
     'data': b'',
-    'jobs': list([
+    'job-attributes-tag': list([
     ]),
     'operation-attributes': dict({
       'attributes-charset': 'utf-8',
@@ -973,6 +973,31 @@
           'printer-is-shared',
         ]),
       }),
+    ]),
+    'version': tuple(
+      2,
+      0,
+    ),
+  })
+# ---
+# name: test_parse_jobs_attribute_tags_sides
+  dict({
+    'data': b'',
+    'job-attributes-tag': dict({
+      'finishings': <IppFinishing.STAPLE_TOP_LEFT: 20>,
+      'sides': 'two-sided-long-edge',
+    }),
+    'operation-attributes': dict({
+      'attributes-charset': 'utf-8',
+      'attributes-natural-language': 'en-US',
+      'printer-uri': 'ipp://printer.example.com:361/ipp/print',
+      'requesting-user-name': 'PythonIPP',
+    }),
+    'printers': list([
+    ]),
+    'request-id': 1,
+    'status-code': 11,
+    'unsupported-attributes': list([
     ]),
     'version': tuple(
       2,

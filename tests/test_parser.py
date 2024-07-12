@@ -21,7 +21,7 @@ def test_parse() -> None:
     result = parser.parse(RESPONSE_GET_PRINTER_ATTRIBUTES)
     assert result == {
         "data": b"",
-        "jobs": [],
+        "job-attributes-tag": [],
         "operation-attributes": {
             "attributes-charset": DEFAULT_CHARSET,
             "attributes-natural-language": DEFAULT_CHARSET_LANGUAGE,
@@ -160,6 +160,16 @@ def test_parse_kyocera_ecosys_m2540dn(snapshot: SnapshotAssertion) -> None:
     """Test the parse method against response from Kyocera Ecosys M2540DN."""
     response = load_fixture_binary(
         "get-printer-attributes-kyocera-ecosys-m2540dn-001.bin",
+    )
+
+    result = parser.parse(response)
+    assert result == snapshot
+
+
+def test_parse_jobs_attribute_tags_sides(snapshot: SnapshotAssertion) -> None:
+    """Test the parse method against a previously serialized dict with a job_attributes_tag."""
+    response = load_fixture_binary(
+        "serializer/test_encode_dict_job_attributes_tag.bin",
     )
 
     result = parser.parse(response)
