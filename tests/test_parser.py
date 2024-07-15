@@ -22,7 +22,7 @@ def test_parse() -> None:
     assert result == {
         "data": b"",
         "job-attributes-tag": [],
-        "operation-attributes": {
+        "operation-attributes-tag": {
             "attributes-charset": DEFAULT_CHARSET,
             "attributes-natural-language": DEFAULT_CHARSET_LANGUAGE,
             "printer-uri": "ipp://printer.example.com:361/ipp/print",

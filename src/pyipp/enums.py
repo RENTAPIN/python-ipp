@@ -273,7 +273,8 @@ class IppPrinterState(IntEnum):
 
 class IppFinishing(IntEnum):
     """Represent the ENUMs of the finishings attribute."""
-    # https://ftp.pwg.org/pub/pwg/candidates/cs-ippfinishings20-20141219-5100.1.pdf page 20
+
+    # https://ftp.pwg.org/pub/pwg/candidates/cs-ippfinishings20-20141219-5100.1.pdf
     NONE = 3
     STAPLE = 4
     PUNCH = 5
@@ -284,7 +285,7 @@ class IppFinishing(IntEnum):
     STAPLE_TOP_LEFT = 20
     STAPLE_BOTTOM_LEFT = 21
     STAPLE_TOP_RIGHT = 22
-    STAPLE_BOTTOM_RIGHT =23
+    STAPLE_BOTTOM_RIGHT = 23
     EDGE_STITCH_LEFT = 24
     EDGE_STITCH_TOP = 25
     EDGE_STITCH_RIGHT = 26
@@ -296,7 +297,7 @@ class IppFinishing(IntEnum):
     # [PWG5100.1-2001]
     FOLD = 10
     TRIM = 11
-    BALE = 12
+    BALE = 12  # codespell:ignore
     BOOKLET_MAKER = 13
     JOG_OFFSET = 14
     BIND_LEFT = 50

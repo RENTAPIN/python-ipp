@@ -4,7 +4,7 @@
     'data': b'',
     'job-attributes-tag': list([
     ]),
-    'operation-attributes': dict({
+    'operation-attributes-tag': dict({
       'attributes-charset': 'utf-8',
       'attributes-natural-language': 'de',
     }),
@@ -451,7 +451,7 @@
     'data': b'',
     'job-attributes-tag': list([
     ]),
-    'operation-attributes': dict({
+    'operation-attributes-tag': dict({
       'attributes-charset': 'utf-8',
       'attributes-natural-language': 'en',
     }),
@@ -944,7 +944,7 @@
     'data': b'',
     'job-attributes-tag': list([
     ]),
-    'operation-attributes': dict({
+    'operation-attributes-tag': dict({
       'attributes-charset': 'utf-8',
       'attributes-natural-language': 'en-us',
     }),
@@ -987,7 +987,7 @@
       'finishings': <IppFinishing.STAPLE_TOP_LEFT: 20>,
       'sides': 'two-sided-long-edge',
     }),
-    'operation-attributes': dict({
+    'operation-attributes-tag': dict({
       'attributes-charset': 'utf-8',
       'attributes-natural-language': 'en-US',
       'printer-uri': 'ipp://printer.example.com:361/ipp/print',
