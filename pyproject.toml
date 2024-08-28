@@ -7,22 +7,23 @@ classifiers = [
   "Framework :: AsyncIO",
   "Intended Audience :: Developers",
   "Natural Language :: English",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 keywords = ["ipp", "api", "async", "client", "printer"]
-documentation = "https://github.com/ctalkington/python-ipp"
-homepage = "https://github.com/ctalkington/python-ipp"
+documentation = "https://github.com/RENTAPIN/python-ipp"
+homepage = "https://github.com/RENTAPIN/python-ipp"
 license = "MIT"
-maintainers = ["Chris Talkington <chris@talkingtontech.com>"]
+maintainers = ["Pieter Kuppens <pieter.kuppens@gmail.com>"]
 packages = [
   {include = "pyipp", from = "src"},
 ]
 readme = "README.md"
-repository = "https://github.com/ctalkington/python-ipp"
-version = "0.0.0"
+repository = "https://github.com/RENTAPIN/python-ipp"
+version = "0.17.0"
 
 [tool.poetry.dependencies]
 aiohttp = ">=3.0.0"
@@ -30,7 +31,7 @@ async-timeout = { version = "4.0.3", python = "<3.11" }
 awesomeversion = ">=21.10.1"
 backoff = ">=2.2.0"
 deepmerge = ">=1.1.0"
-python = "^3.9"
+python = "^3.10"
 yarl = ">=1.6.0"
 python-dotenv = "^1.0.1"
 pypdf = "^4.3.1"
@@ -56,8 +57,8 @@ types-cachetools = "^5.3.0"
 yamllint = "1.35.1"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/ctalkington/python-ipp/issues"
-Changelog = "https://github.com/ctalkington/python-ipp/releases"
+"Bug Tracker" = "https://github.com/RENTAPIN/python-ipp/issues"
+Changelog = "https://github.com/RENTAPIN/python-ipp/releases"
 
 [tool.coverage.report]
 show_missing = true
