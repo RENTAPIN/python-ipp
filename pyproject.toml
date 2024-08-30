@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pyipp"
-description = "Asynchronous Python client for Internet Printing Protocol (IPP)"
-authors = ["Chris Talkington <chris@talkingtontech.com>"]
+description = "Asynchronous Python client for Internet Printing Protocol (IPP) [RENTAPIN fork]"
+authors = ["Pieter Kuppens <pieter.kuppens@gmail.com>"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Framework :: AsyncIO",
@@ -23,7 +23,7 @@ packages = [
 ]
 readme = "README.md"
 repository = "https://github.com/RENTAPIN/python-ipp"
-version = "0.17.0"
+version = "0.17.1"
 
 [tool.poetry.dependencies]
 aiohttp = ">=3.0.0"
