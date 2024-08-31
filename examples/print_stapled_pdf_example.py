@@ -38,8 +38,12 @@ if __name__ == "__main__":
     )
 
     DOCUMENT_FORMAT = "application/pdf"
+
+    p = Path(__file__).resolve()
+    p = p.parent.joinpath("example.pdf")
+
     FILE_NAME = __file__  # const: just print this file as an example
-    with Path(FILE_NAME).open("rb") as f:
+    with Path(p).open("rb") as f:
         content = f.read()
 
     loop = asyncio.get_event_loop()
