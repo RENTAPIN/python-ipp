@@ -102,8 +102,8 @@ def test_encode_dict_job_attributes_tag() -> None:
 
 
 def test_serialize_deserialize_completeness() -> None:
-    """Test if the tags are present after serialization-deserializing (parsing)."""
-    """
+    """Test if the tags are present after serialization-deserializing (parsing).
+
     This test checks for a solution of the problem that pages were not printed in duplex mode.
     Root cause was that the "sides" attribute was not serialized.
     """

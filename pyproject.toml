@@ -73,7 +73,7 @@ source = ["pyipp"]
 # free to run mypy on Windows, Linux, or macOS and get consistent
 # results.
 platform = "linux"
-python_version = "^3.10"
+python_version = "3.10"
 
 # show error messages from unrelated files
 follow_imports = "normal"
