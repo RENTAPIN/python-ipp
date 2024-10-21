@@ -204,13 +204,11 @@ class IPP:
             raise IPPVersionNotSupportedError("IPP version not supported by server")
 
         if parsed_status_code not in range(0x200):
+            parsed["status-code-name"] = IppStatus(parsed_status_code).name
+            parsed["status-code-hex"] = f"0x{parsed_status_code:04X}"
             raise IPPError(
                 "Unexpected printer status code",
-                {
-                    "status-code": parsed_status_code,
-                    "status-code-hex": f"0x{parsed_status_code:04X}",
-                    "status_code_name": IppStatus(parsed_status_code).name,
-                },
+                parsed,
             )
 
         return parsed
