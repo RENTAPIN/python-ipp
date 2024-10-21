@@ -23,7 +23,7 @@ packages = [
 ]
 readme = "README.md"
 repository = "https://github.com/RENTAPIN/python-ipp"
-version = "0.17.4"
+version = "0.17.5"
 
 [tool.poetry.dependencies]
 aiohttp = ">=3.0.0"
@@ -151,6 +151,7 @@ include = ["src"]
 [tool.pytest.ini_options]
 addopts = "--cov"
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 
 [tool.ruff.lint]
 select = ["ALL"]
